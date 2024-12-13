@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Ishikaze.com</title>
+</head>
+<body onload="newSong()">
+    <div id="loading-container" onclick="closeLoader()">
+        <h1 id="loading-text">Loading... []</h1>
+        <svg viewBox="0 0 16 16" height="48" width="48" class="windows-loading-spinner" id="loading-spinner">
+        <circle r="7px" cy="8px" cx="8px"></circle>
+        </svg>
+    </div>
+    <div id="songID" style="z-index: 99; display: flex; flex-direction: row; justify-content: center; align-items: center; position: fixed; color: #FFFFFF; padding: 1rem; opacity: 0.5; pointer-events: none; top: 0; left: 0;">
+        <p style="margin-right: 0.5rem; font-size: 1.5rem;">♫</p>
+        <p id="songTitle"></p>
+    </div>
+
+    <div id="traveler">
+        <h1 id="travelerTitle">Traveling</h1>
+    </div>
+    
+    <div id="main-container">
+        <div id="settings">
+            <input type="checkbox" id="wavesToggle" checked onmousedown="wavesToggle()">
+            <label for="wavesToggle">waves</label>
+            <input type="checkbox" id="grassToggle" checked onmousedown="grassToggle()">
+            <label for="grassToggle">grass</label>
+            <p id="fps">fps</p>
+        </div>
+        <div id="holder"></div>
+        <div id="blur"></div>
+        <div id="hue"></div>
+        <div id="dust"></div>
+        <script src="dusts.js"></script>
+        <script src="assets/dust.js"></script>
+        <div id="seed"></div>
+        <script src="seeds.js"></script>
+        <script src="assets/seed.js"></script>
+        <div class="grass-container" id="grass-container">
+            <canvas id="fieldCanvas"></canvas> </canvas>
+        </div>
+        
+        <script src="./waves.js"></script>
+        <script src="./grass.js"></script>
+        <div id="menu">
+            <h1 id="greeter">Welcome</h1>
+            <div id="choices">
+                <div id="selecter"></div>
+                <a id="a1" onmouseover="option1()" onmousedown="toSpace()">Ishikaze's Space (WIP)</a>
+                <a id="a2" onmouseover="option2()" onmousedown="toMCServer()">Ishikaze's Minecraft server (WIP)</a>
+                <a id="a3" onmouseover="option3()" onmousedown="hideMenu()">Hide this dialogue</a>
+            </div>
+        </div>
+        <div id="unhideBtn">
+            <a></a>
+        </div>
+    </div>
+    <audio id="myAudio" onended="newSong()" preload="auto"> 
+        <source src="./assets/moosic/EtherField.mp3" type="audio/mp3">
+    </audio>
+    <script src="./code.js"></script>
+</body>
+</html>
