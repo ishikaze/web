@@ -15,6 +15,9 @@ var audioFiles = [
   "./assets/moosic/Grimheart.mp3",
   "./assets/moosic/LiveFastDieYoung.mp3",
   "./assets/moosic/SaintOrSinner.mp3",
+  "./assets/moosic/a.i.ngel.mp3",
+  "./assets/moosic/EONBREAK.mp3",
+  "./assets/moosic/particleArts.mp3",
 ];
 
 var x = document.getElementById("myAudio");
@@ -41,7 +44,22 @@ for (var i in audioFiles) {
 }
 
 function newSong() {
-  switch (randomNum(1, 6)) {
+  switch (randomNum(1, 9)) {
+    case 9:
+      song = "./assets/moosic/particleArts.mp3";
+      songName = "Particle Arts by Virtual Self";
+      songStart = 165;
+      break;
+    case 8:
+      song = "./assets/moosic/EONBREAK.mp3";
+      songName = "EON BREAK by Virtual Self";
+      songStart = 64;
+      break;
+    case 7:
+      song = "./assets/moosic/a.i.ngel.mp3";
+      songName = "a.i.ngel (Become God) by Virtual Self";
+      songStart = 205;
+      break;
     case 6:
       song = "./assets/moosic/LiveFastDieYoung.mp3";
       songName = "Live Fast Die Young by anubasu-anubasu";
@@ -60,6 +78,7 @@ function newSong() {
     case 3:
       song = "./assets/moosic/EtherField.mp3";
       songName = "Ether Field by Wisp X";
+      songStart = 182;
       break;
     case 2:
       song = "./assets/moosic/Grimheart.mp3";

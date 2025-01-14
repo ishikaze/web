@@ -57,7 +57,7 @@ particlesJS('seed',
         },
         "move": {
           "enable": true,
-          "speed": 2,
+          "speed": 1,
           "direction": "top-right",
           "random": false,
           "straight": false,
