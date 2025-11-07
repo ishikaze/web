@@ -2,19 +2,14 @@
   const pi = Math.PI;
   const pi2 = 2 * Math.PI;
 
-  // Simple device detection for mobile
   function isMobile() {
     return /Mobi|Android/i.test(navigator.userAgent);
   }
-
   this.Waves = function (holder, options) {
-    // Check if the device is mobile and return early
     if (isMobile()) {
       console.log('Mobile detected, disabling waves animation.');
-      return; // Skip animation entirely
+      return;
     }
-
-    // Proceed with the animation setup if not mobile
     const Waves = this;
 
     Waves.options = Object.assign({
@@ -285,7 +280,6 @@
     return Math.round(1000 / (fps / this.data.length));
   };
 
-  // Helper functions
   function dtr(deg) {
     return deg * pi / 180;
   }
@@ -300,7 +294,6 @@
 
 })();
 
-// Start the animation only if not on mobile
 const waves = new Waves('#holder', {
   fps: true,
   waves: 3,
